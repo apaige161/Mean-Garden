@@ -1,4 +1,20 @@
-# MyApp
+#### Urban Grid Garden
+TODO's:
+
+1. protect routes(API) on harvest, garden
+2. filter only user data to be streamed on back end (gardens, harvests)
+4. refresh page -gardens on dialog close to update garden items
+5. add background images
+6. UI overhaul
+7. finish harvest page
+8. create a landing page
+9. create an about page
+10. create a how to squarefoot garden page
+
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
@@ -22,6 +38,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
