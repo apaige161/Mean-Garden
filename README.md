@@ -1,15 +1,30 @@
 #### Urban Grid Garden
-TODO's:
+
+
+
+##TODO's:
 
 1. protect routes(API) on harvest, garden
 2. filter only user data to be streamed on back end (gardens, harvests)
-4. refresh page -gardens on dialog close to update garden items
+4. refresh page -gardens on dialog close to update garden items (noted issue on Github)
 5. add background images
 6. UI overhaul
-7. finish harvest page
-8. create a landing page
-9. create an about page
-10. create a how to squarefoot garden page
+  -dark mode switch?
+8. finish harvest page
+  -display user's harvests
+  -display user's calculated total harvest by plant and number harvested
+9. create a landing page
+  -what is Squarefoot gardening and why use it
+  -link to other tutorials (how to build a raised garden, plant specific tutorials)
+  -how to use the website
+    -how the flow works
+10. create an about page
+  -Personal intro
+  -mat-card for a professional photo of Alex
+12. create a tutorials page/s
+  -build a raised bed
+  -how to grow peppers or build a trellis or something
+  
 
 
 
