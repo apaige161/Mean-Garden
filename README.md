@@ -11,8 +11,7 @@
 6. UI overhaul
   -dark mode switch?
 8. finish harvest page
-  -display user's harvests
-  -display user's calculated total harvest by plant and number harvested
+  -flexbox everything. center, up down left righta
 9. create a landing page
   -what is Squarefoot gardening and why use it
   -link to other tutorials (how to build a raised garden, plant specific tutorials)
