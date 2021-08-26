@@ -2,7 +2,7 @@
 
 
 
-##TODO's:
+### TODO's:
 
 1. protect routes(API) on harvest, garden
 2. filter only user data to be streamed on back end (gardens, harvests)
@@ -11,7 +11,8 @@
 6. UI overhaul
   -dark mode switch?
 8. finish harvest page
-  -flexbox everything. center, up down left righta
+  -**Only display totals with average rating next to them**
+  -flexbox everything. center, up down left right
 9. create a landing page
   -what is Squarefoot gardening and why use it
   -link to other tutorials (how to build a raised garden, plant specific tutorials)
