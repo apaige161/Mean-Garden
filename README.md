@@ -24,6 +24,8 @@
 12. create a tutorials page/s
   -build a raised bed
   -how to grow peppers or build a trellis or something
+13. Ability to leave optional notes when harvesting (Soil too sandy, planted too early, etc)
+14. Add in user option to change when the garden will be planted in the build a garden stage
   
 
 
