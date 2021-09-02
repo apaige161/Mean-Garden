@@ -205,7 +205,10 @@ export class MoreInfoComponent implements OnInit, OnDestroy {
   * 
   * Harvest plant
   * 
+  * 
+  * 
   * TODO: BUG: refresh page on dialog close
+  * 
   * 
   *   Features
   *     -Only display when there is a plant to harvest
@@ -216,22 +219,16 @@ export class MoreInfoComponent implements OnInit, OnDestroy {
   * TODO: Add backgrouns image, rounded edge transparent white backgrouns under all elements
   * 
   * 
-  *   Create new object for harvested objects ^
-  *   Send data to service -> node -> mongoDb
-  * 
-  *   get how many plants were harvested (perFoot)
-  *   send plant type
-  * 
   ***********************************************************************************************/
 
   //how many will be harvested
-  
   lastHarvest: boolean;
 
-  quantity: number;
+  //notes section
+  harvestNotes: string = "";
 
   
-
+ 
   //used to manage state
   toggleHavestOptions() {
     this.harvestPlantBool = !this.harvestPlantBool;
@@ -246,10 +243,6 @@ export class MoreInfoComponent implements OnInit, OnDestroy {
     }
   }
 
-  //access quailty of harvest by this.rating
-  //Rating by stars
-  faStar = faStar;
-
   //determine what stars are solid/empty
   returnStar(i: number) {
     if(this.rating >= i + 1) {
@@ -263,12 +256,10 @@ export class MoreInfoComponent implements OnInit, OnDestroy {
     this.rating = i + 1;
   }
 
-  
+  quantity: number;
 
   //non-mutating
   harvestPlant(plantToHarvest) {
-
-    this.quantity = this.singlePlant.perFoot;
 
     const harvestData: Harvest = {
       owner: plantToHarvest.owner,
@@ -278,7 +269,9 @@ export class MoreInfoComponent implements OnInit, OnDestroy {
       //quantity may be set by user if multiHarvest=true
       quantity: this.quantity,
       garden: plantToHarvest.garden,
-      plantType: plantToHarvest.plantType
+      plantType: plantToHarvest.plantType,
+      notes: this.harvestNotes,
+      transformed: false,
     }
 
     console.log(harvestData);
@@ -370,7 +363,7 @@ export class MoreInfoComponent implements OnInit, OnDestroy {
     this.plantSubscription = this.getSinglePlant(this.data._id).subscribe(plant => {
       this.singlePlant = plant
       this.getPlantProgress(this.singlePlant);
-      
+      this.quantity = this.singlePlant.perFoot;
     });
 
     

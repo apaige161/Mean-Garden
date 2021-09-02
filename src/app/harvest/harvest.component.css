@@ -1,0 +1,14 @@
+#card-title-container {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.plant-card {
+    max-width: 400px;
+    margin: 10px;
+    
+}
+
+#card-notes {
+    background-color: lightblue;
+}
