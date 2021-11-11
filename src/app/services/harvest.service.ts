@@ -2,16 +2,24 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Harvest } from '../models/harvest';
+import { environment } from '../../environments/environment'
+
+
+const BACKEND_URL = environment.apiUrl + "/harvest/";
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class HarvestService {
 
   today = new Date();
   plants: Observable<Harvest[]>;
 
-  url = 'https://urban-grid-garden-api.herokuapp.com/api/harvest/';
+  
+  //url = 'https://urban-grid-garden-api.herokuapp.com/api/harvest/';
+
 
   harvestData: Harvest = {
     owner: "",
@@ -35,7 +43,7 @@ export class HarvestService {
 
   //get all plants
   getHarvest() {
-    return this.http.get<Harvest[]>(this.url);
+    return this.http.get<Harvest[]>(BACKEND_URL);
   }
 
   /**************************************************************
@@ -56,7 +64,7 @@ export class HarvestService {
       this.harvestData.notes = harvest.notes;
 
       //return as a promise
-      this.http.post(this.url, this.harvestData)
+      this.http.post(BACKEND_URL, this.harvestData)
         .subscribe(data => {
         console.log("Service data notes: " + this.harvestData.notes);
     })
@@ -70,7 +78,7 @@ export class HarvestService {
 
    deleteOne(id) {
     //console.log("continue with deletion from service, id: " + id)
-    return this.http.delete(this.url+'/'+id)
+    return this.http.delete(BACKEND_URL+'/'+id)
   }
 
 

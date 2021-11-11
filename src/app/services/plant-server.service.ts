@@ -4,6 +4,11 @@ import { map, tap } from 'rxjs/operators';
 import { SinglePlant } from '../models/single-plant';
 import { HttpClient } from '@angular/common/http';
 
+import { environment } from '../../environments/environment'
+
+//change to this format
+const BACKEND_URL = environment.apiUrl + "/gardens/";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +19,7 @@ export class PlantServerService {
   plants: Observable<SinglePlant[]>;
 
   //inject http 
-  url = 'https://urban-grid-garden-api.herokuapp.com/api/gardens/';
+  //url = 'https://urban-grid-garden-api.herokuapp.com/api/gardens/';
 
   //data to be posted
   postData = {
@@ -66,12 +71,12 @@ export class PlantServerService {
 
   //get all plants
   getPlants() {
-    return this.http.get<SinglePlant[]>(this.url);
+    return this.http.get<SinglePlant[]>(BACKEND_URL);
   }
 
   //get only signed in user's plants
   getMyPlants() {
-    return this.http.get<SinglePlant[]>(this.url + "/onlyUserGarden");
+    return this.http.get<SinglePlant[]>(BACKEND_URL + "onlyUserGarden");
   }
 
   
@@ -117,7 +122,7 @@ export class PlantServerService {
       this.postData.yGarden = yGarden;
       this.postData.col = col;
       //return as a promise
-      this.http.post(this.url, this.postData)
+      this.http.post(BACKEND_URL, this.postData)
         .subscribe(data => {
         //console.log(data);
     })
@@ -152,7 +157,7 @@ export class PlantServerService {
       this.postData.yGarden = yGarden;
       this.postData.col = col;
       //return as a promise
-      this.http.post(this.url, this.postData)
+      this.http.post(BACKEND_URL, this.postData)
         .subscribe(data => {
         //console.log(data);
     })
@@ -165,7 +170,7 @@ export class PlantServerService {
   ********************************************************************************************/
 
   deleteOne(id: string) {
-    return this.http.delete(this.url+'/'+id)
+    return this.http.delete(BACKEND_URL+id)
   }
 
   //delete all plants with a given name
@@ -197,7 +202,7 @@ export class PlantServerService {
       dateToHarvest: Date,
       daysLeftToHarvest: number,
       progressToHarvest: number,
-    }>(this.url+'/'+id);
+    }>(BACKEND_URL+id);
   }
 
 
@@ -223,7 +228,7 @@ export class PlantServerService {
     }
 
     //send to backend
-    this.http.put(this.url + "/changeDatePlanted/" + id, postData).subscribe( result => {
+    this.http.put(BACKEND_URL + "changeDatePlanted/" + id, postData).subscribe( result => {
       //console.log(result);
     })
   }
@@ -255,7 +260,7 @@ export class PlantServerService {
       console.log(postData.plant);
 
       //send to backend
-      this.http.put(this.url + "/updatePlant/" + id, postData).subscribe( result => {
+      this.http.put(BACKEND_URL + "updatePlant/" + id, postData).subscribe( result => {
         //console.log(result);
     })
 
@@ -274,7 +279,7 @@ export class PlantServerService {
     }
 
     //send to backend
-    this.http.put(this.url + "/changeDateHarvested/" + id, postData).subscribe( result => {
+    this.http.put(BACKEND_URL + "changeDateHarvested/" + id, postData).subscribe( result => {
       //console.log(result);
     })
   }
@@ -292,7 +297,7 @@ export class PlantServerService {
     }
 
     //send to backend
-    this.http.put(this.url + "/changeGrowthModifier/" + id, postData).subscribe( result => {
+    this.http.put(BACKEND_URL + "changeGrowthModifier/" + id, postData).subscribe( result => {
       //console.log(result);
     })
   }

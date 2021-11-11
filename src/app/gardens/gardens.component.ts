@@ -21,6 +21,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MoreInfoComponent } from '../more-info/more-info.component';
 import { BehaviorSubject } from 'rxjs';
 
+import { environment } from '../../environments/environment'
+
 
 @Component({
   selector: 'app-gardens',
@@ -29,12 +31,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class GardensComponent implements OnInit {
 
-  readonly url = 'https://urban-grid-garden-api.herokuapp.com/api/gardens/';
+  readonly url = environment.apiUrl + "/gardens/";
 
   //holds all plants
   plants: SinglePlant[] = [];
 
   userEmail: string;
+
 
   SearchGarden = '';
   gardenNames = [];
@@ -137,7 +140,7 @@ export class GardensComponent implements OnInit {
     //loop over each plant and if the plant.garden == plant.gardenTodelete then delete
     this.plants.forEach(plant => {
       if(plant.garden == gardenToDelete) {
-        return this.http.delete(this.url+'/'+plant._id).subscribe(res => {
+        return this.http.delete(this.url+plant._id).subscribe(res => {
 
         })
       }
@@ -160,7 +163,7 @@ export class GardensComponent implements OnInit {
 
     //loop over each id and send the request
     this.plants.forEach(data => {
-      return this.http.delete(this.url+'/'+data._id).subscribe(res => {
+      return this.http.delete(this.url+data._id).subscribe(res => {
         console.log(data._id+" deleted")
       })
     })
