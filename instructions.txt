@@ -27,3 +27,11 @@ FIX THESE THINGS
 - recipes 500 -- internal server error
     - I think it has to do with the image or image path
     - removing recipe section for now
+
+
+
+route api url through a .env file
+- dev
+- production
+
+move code into production branch

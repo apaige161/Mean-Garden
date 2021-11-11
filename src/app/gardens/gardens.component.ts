@@ -29,6 +29,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class GardensComponent implements OnInit {
 
+  readonly url = 'https://urban-grid-garden-api.herokuapp.com/api/gardens/';
 
   //holds all plants
   plants: SinglePlant[] = [];
@@ -56,7 +57,7 @@ export class GardensComponent implements OnInit {
 
   
 
-   readonly url = 'https://urban-grid-garden-api.herokuapp.com/api/gardens/';
+   
 
   /*************************************************************************************************
    * 
