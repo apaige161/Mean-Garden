@@ -75,7 +75,9 @@
 
 ::ng-deep .mat-progress-bar {
     border-radius: 2px;
+    width: 100% !important;
 }
+
 
 .garden-info {
     margin: 10px 0;
@@ -95,4 +97,22 @@
 
 mat-card {
     height: 150px;
+    max-width: 150px;
+}
+
+/*tablet breakpoint*/
+@media (max-width: 1500px) { 
+    .hide-when-md {
+        display: none;
+    }
+    body {
+        font-size: small;
+    }
+}
+
+/*mobile breakpoint*/
+@media (max-width: 767px) {
+    .hide-when-sm {
+        display: none;
+    }
 }

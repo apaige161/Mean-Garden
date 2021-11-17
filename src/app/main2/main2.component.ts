@@ -27,10 +27,10 @@ export class Main2Component implements OnInit {
    * 
    */
 
-  constructor(private plantService: PlantServerService, 
-    private http: HttpClient, 
-    private route: ActivatedRoute,
-    private plantData: PlantDataService) {
+  constructor(
+    private plantService: PlantServerService, 
+    private plantData: PlantDataService
+  ) {
     
    }
 
@@ -50,8 +50,8 @@ export class Main2Component implements OnInit {
   growthModifier: number = 1;
 
   
-
-  
+  /** drop-down variable **/
+  singlePlant: any;
   
 
   /*** Progress variables ***/
@@ -151,8 +151,29 @@ export class Main2Component implements OnInit {
     }
   }
   
+/********************************************************
+ * 
+ * Mobile view dropdown
+ * return only the items with season that are passed in
+ * - goal is to remove the empty spaces
+ * 
+ ***********************************************************/
 
+ filteredArr = [];
 
+ getSelectedSeason(arr:any, season) {
+   
+   arr.forEach(plant => {
+     if(plant.season.includes(season)) {
+       this.filteredArr.push(plant)
+     }
+   });
+
+ }
+
+ resetSeasonSelector() {
+   this.filteredArr = []
+ }
 
 
 

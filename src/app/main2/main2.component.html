@@ -8,110 +8,158 @@
 
   <div class="col-lg-12">
 
-      <!-- main banner -->
-      <!-- user to select size and see plants added -->
-      <div class="radio "> <!-- new garden input -->
+    <!-- main banner -->
+    <!-- user to select size and see plants added -->
+    <div class="radio "> <!-- new garden input -->
 
-        <!-- size sliders and name row -->
-        <div class="row top-container center">
-          <!-- slider to choose xGardenMax, yGardenMax -->
+      <!-- size sliders and name row -->
+      <div class="row top-container center">
+        <!-- slider to choose xGardenMax, yGardenMax -->
 
-          <!-- Garden name input form -->
-          <div class="col-lg-6 col-md-12 ">
-            <h2>Name this garden:</h2>
-            <input type="text" class="form-control" #name 
-              required
-              [(ngModel)]="gardenName" >
+        <!-- Garden name input form -->
+        <div class="col-lg-6 col-md-12 ">
+          <h2>Name this garden:</h2>
+          <input type="text" class="form-control" #name 
+            required
+            [(ngModel)]="gardenName" >
 
-            <a routerLink="/gardens">
-              <button mat-raised-button color="accent"
-                class="mt-1 plant-btn"
-                (click)="postToDb()"
-                (click)="canSave()"
-                (click)="resetProgress()"
-                [disabled]="saveDisable"
-                >Save</button>
-            </a>
+          <a routerLink="/gardens">
+            <button mat-raised-button color="accent"
+              class="mt-1 plant-btn"
+              (click)="postToDb()"
+              (click)="canSave()"
+              (click)="resetProgress()"
+              [disabled]="saveDisable"
+              >Save</button>
+          </a>
 
-          </div>
+        </div>
 
-          
+        
 
-          <div class="row">
-            <!-- Input size -->
-            <div class="col-lg-6 col-md-12">
-              <div class="row">
-                <!-- slider to choose xGardenMax -->
-                <div class="col-4">
-                  <h3>Width: {{xGardenMax}} ft</h3>
-                  <mat-slider 
-                    #xGarden
-                    thumbLabel
-                    tickInterval="1"
-                    [(ngModel)]="xGardenMax" min="1" max="4" step="1"
-                    [disabled]="xGardenDisable" ></mat-slider>
-                </div>
-                <!-- slider to choose yGardenMax -->
-                <div class="col-4">
-                  <h3>Length: {{yGardenMax}} ft</h3>
-                  <mat-slider 
-                    #yGarden
-                    thumbLabel
-                    tickInterval="1"
-                    vertical
-                    invert
-                    [(ngModel)]="yGardenMax"  min="1" max="8" step="1"
-                    [disabled]="yGardenDisable" ></mat-slider>
-                </div>
-                <!-- slider to choose growthModifier -->
-                <div class="col-4" 
-                  matTooltip="Adjust for poor soil conditions or lack of sunlight."
-                  matTooltipPosition="above">
-                  <h3>Growing conditions: {{growthModifier * 100}}%</h3>
-                  <mat-slider 
-                    #yGarden
-                    thumbLabel
-                    tickInterval=".1"
-                    [(ngModel)]="growthModifier"  min=".5" max="1" step=".1">
-                  </mat-slider>
-                </div>
+        <div class="row mt-3">
+          <!-- Input size -->
+          <div class="col-lg-6 col-md-12">
+            <div class="row">
+              <!-- slider to choose xGardenMax -->
+              <div class="col-lg-4 col-md-12">
+                <h3>Width: {{xGardenMax}}'</h3>
+                <mat-slider 
+                  #xGarden
+                  thumbLabel
+                  tickInterval="1"
+                  [(ngModel)]="xGardenMax" min="1" max="4" step="1"
+                  [disabled]="xGardenDisable" ></mat-slider>
               </div>
-              
+              <!-- slider to choose yGardenMax -->
+              <div class="col-lg-4 col-md-12">
+                <h3>Length: {{yGardenMax}}'</h3>
+                <mat-slider 
+                  #yGarden
+                  thumbLabel
+                  tickInterval="1"
+                  vertical
+                  invert
+                  [(ngModel)]="yGardenMax"  min="1" max="8" step="1"
+                  [disabled]="yGardenDisable" ></mat-slider>
+              </div>
+              <!-- slider to choose growthModifier -->
+              <div class="col-lg-4 col-md-12" 
+                matTooltip="Adjust for poor soil conditions or lack of sunlight."
+                matTooltipPosition="above">
+                <h3>Growing conditions: {{growthModifier * 100}}%</h3>
+                <mat-slider 
+                  #yGarden
+                  thumbLabel
+                  tickInterval=".1"
+                  [(ngModel)]="growthModifier"  min=".5" max="1" step=".1">
+                </mat-slider>
+              </div>
             </div>
-
-            <!-- Filters -->
-            <div class="col-lg-6 col-md-12 ">
-              <!-- Plant type option list -->
-              <mat-radio-group
-                aria-labelledby="radio-group-label"
-                class="radio-group center" 
-                [(ngModel)]="favoritePlantType">
-                <mat-radio-button class="radio-button" *ngFor="let types of plantTypes" [value]="types">
-                  {{types | titlecase}}
-                </mat-radio-button>
-              </mat-radio-group>
-
-              <!-- Plant season option list -->
-              <mat-radio-group
-                aria-labelledby="radio-group-label"
-                class="radio-group center"
-                [(ngModel)]="favoriteSeason">
-                <mat-radio-button class="radio-button" *ngFor="let season of seasons" [value]="season">
-                  {{season | titlecase}}
-                </mat-radio-button>
-              </mat-radio-group>
-            </div>
+            
           </div>
 
-          
+          <!-- Filters -->
+          <div class="col-lg-6 col-md-12 ">
+            <!-- Plant type option list -->
+            <mat-radio-group
+              aria-labelledby="radio-group-label"
+              class="radio-group center" 
+              [(ngModel)]="favoritePlantType">
+              <mat-radio-button class="radio-button" *ngFor="let types of plantTypes" [value]="types">
+                {{types | titlecase}}
+              </mat-radio-button>
+            </mat-radio-group>
 
+            <!-- Plant season option list -->
+            <mat-radio-group
+              aria-labelledby="radio-group-label"
+              class="radio-group center"
+              [(ngModel)]="favoriteSeason">
+              <mat-radio-button class="radio-button" *ngFor="let season of seasons" [value]="season">
+                {{season | titlecase}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+
+
+
+        <!--
+        
+        <div class="row" *ngIf="favoritePlantType === 'vegatables' ">
+            <mat-form-field appearance="fill">
+            <mat-label>{{singlePlant.plant}}</mat-label>
+            <mat-select 
+                [(ngModel)]="singlePlant" 
+                (click)="getSelectedSeason(vegatablesArr, favoriteSeason)">
+                <mat-option *ngFor="let veggie of filteredArr" [value]="veggie">
+                    only display if correct planting season 
+                    <div *ngIf="veggie.season.includes(favoriteSeason)" >
+                        get rid of empty indexes in array 
+                        {{veggie.plant | titlecase}}
+                    </div>
+                    
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+      -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- display table size and above -->
           <!-- plant list -->
-          <div class="col-12 plant-list">
+          <div class="col-12 plant-list ">
             
             <!-- Veggies -->
             <div class="row">
               <ng-container class="" *ngFor="let item of vegatablesArr; index as i">
-                <div *ngIf="favoritePlantType === 'vegatables' && item.season.includes(favoriteSeason)" class="col-2">
+                <div *ngIf="favoritePlantType === 'vegatables' && item.season.includes(favoriteSeason)" class="col-xl-2 col-lg-4">
                   <button mat-button color="primary" class="mb-1"
                   (click)="this.totalPossiblePlants()"
                   (click)="this.calculateProgress()"
@@ -134,7 +182,7 @@
             <!-- Herbs -->
             <div class="row">
               <ng-container class="" *ngFor="let item of herbsArr; index as i">
-                <div *ngIf="favoritePlantType === 'herbs' && item.season.includes(favoriteSeason)" class="col-2">
+                <div *ngIf="favoritePlantType === 'herbs' && item.season.includes(favoriteSeason)" class="col-xl-2 col-lg-4">
                   <button mat-button color="primary" class="mb-1"
                   (click)="this.totalPossiblePlants()"
                   (click)="this.calculateProgress()"
@@ -146,7 +194,8 @@
                   [disabled]="disableAddPlants">
                     <div 
                       matTooltip="{{item.perFoot}} per foot"
-                      matTooltipPosition="above">
+                      matTooltipPosition="above"
+                      >
                       {{item.plant | titlecase}}
                     </div>
                   </button>
@@ -157,7 +206,7 @@
             <!-- Flowers -->
             <div class="row">
               <ng-container class="" *ngFor="let item of flowersArr; index as i">
-                <div *ngIf="favoritePlantType === 'flowers' && item.season.includes(favoriteSeason)" class="col-2">
+                <div *ngIf="favoritePlantType === 'flowers' && item.season.includes(favoriteSeason)" class="col-xl-2 col-lg-4">
                   <button mat-button color="primary" class="mb-1"
                   (click)="this.totalPossiblePlants()"
                   (click)="this.calculateProgress()"
@@ -217,10 +266,10 @@
               <div *ngIf="firstCol.length > 0">
                 <button 
                   mat-raised-button color="warn" 
-                  class="mt-1"
+                  class="mt-1 "
                   (click)="clearColumn(firstCol)" 
                   (click)="calculateProgress()"
-                >Remove Column</button>
+                > <p class="rmv-btn">X</p> </button>
               </div>
           </div>
 
@@ -245,10 +294,10 @@
               <div *ngIf="secondCol.length > 0">
                 <button 
                   mat-raised-button color="warn" 
-                  class="mt-1"
+                  class="mt-1 rmv-btn"
                   (click)="clearColumn(secondCol)" 
                   (click)="calculateProgress()"
-                >Remove Column</button>
+                > <p class="rmv-btn">X</p> </button>
               </div>
           </div>
 
@@ -273,10 +322,10 @@
               <div *ngIf="thirdCol.length > 0">
                 <button 
                   mat-raised-button color="warn" 
-                  class="mt-1"
+                  class="mt-1 rmv-btn"
                   (click)="clearColumn(thirdCol)" 
                   (click)="calculateProgress()"
-                >Remove Column</button>
+                > <p class="rmv-btn">X</p> </button>
               </div>
           </div>
 
@@ -301,10 +350,10 @@
               <div *ngIf="fourthCol.length > 0">
                 <button 
                   mat-raised-button color="warn" 
-                  class="mt-1"
+                  class="mt-1 rmv-btn"
                   (click)="clearColumn(fourthCol)" 
                   (click)="calculateProgress()"
-                >Remove Column</button>
+                > <p class="rmv-btn">X</p>  </button>
               </div>
           </div>
 
@@ -314,6 +363,6 @@
         </div><!-- end of plant columns -->
       </div>
 
-  </div>
 
+      </div>
 </div><!-- container-fluid-->

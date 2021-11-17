@@ -48,6 +48,9 @@
     .hide-when-md {
         display: none;
     }
+    body {
+        font-size: small;
+    }
 }
 
 /*mobile breakpoint*/

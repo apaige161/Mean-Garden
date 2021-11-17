@@ -25,12 +25,11 @@ body {
     font-family: 'Work Sans', sans-serif; 
 
     padding-bottom: 20%;
-
 }
 
 #title {
     font-family: 'Lobster', cursive;
-    font-size: 90px;;
+    font-size: 10 rem;;
     margin-bottom: 1%;
 }
 

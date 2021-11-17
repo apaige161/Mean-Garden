@@ -36,7 +36,7 @@
     </div>
   </div>
   
-  
+
   <!-- get back saved data -->
   <!-- display a user's garden in rows/columns they entered-->
   <!-- 4 column layout for saved gardens -->
@@ -63,17 +63,9 @@
         <!-- display first column -->
         <mat-card *ngIf="plant.col == 1" class="card-container" (click)="openMoreInfo(plant._id)">
           <div class="card-title">
-            <div class="center">
-              {{plant.plant | titlecase}}
-            </div>
-            <div class="center">
-              x {{plant.perFoot}}
-            </div>
-          </div>
-          <mat-card-content class="print-ignore">
             <!-- displays green bar if ready to harvest -->
             <div *ngIf="plant.progressToHarvest == 100">
-              <div class="progress-wrapper col-6 text-center">
+              <div class="progress-wrapper">
                 <div class="center">
                   <mat-progress-bar
                   class="progress-bar-margin"
@@ -82,10 +74,9 @@
                 </mat-progress-bar>
                 </div>
               </div>
-              <p>{{ plant.progressToHarvest }}%</p>
             </div>
             <div *ngIf="plant.progressToHarvest != 100">
-              <div class="progress-wrapper col-6 text-center">
+              <div class="progress-wrapper text-center">
                 <div class="center">
                   <mat-progress-bar
                   class="progress-bar-margin"
@@ -95,7 +86,14 @@
                 </mat-progress-bar>
                 </div>
               </div>
-              <p>{{ plant.progressToHarvest }}%</p>
+            </div>
+          </div>
+          <mat-card-content class="print-ignore">
+            <div class="center">
+              {{plant.plant | titlecase}}
+            </div>
+            <div class="center hide-when-sm">
+              x {{plant.perFoot}}
             </div>
           </mat-card-content>
         </mat-card>
@@ -113,17 +111,9 @@
         <!-- display second column -->
         <mat-card *ngIf="plant.col == 2" class="card-container" (click)="openMoreInfo(plant._id)">
           <div class="card-title">
-            <div class="center">
-              {{plant.plant | titlecase}}
-            </div>
-            <div class="center">
-              x {{plant.perFoot}}
-            </div>
-          </div>
-          <mat-card-content class="print-ignore">
             <!-- displays green bar if ready to harvest -->
             <div *ngIf="plant.progressToHarvest == 100">
-              <div class="progress-wrapper col-6 text-center">
+              <div class="progress-wrapper">
                 <div class="center">
                   <mat-progress-bar
                   class="progress-bar-margin"
@@ -132,10 +122,9 @@
                 </mat-progress-bar>
                 </div>
               </div>
-              <p>{{ plant.progressToHarvest }}%</p>
             </div>
             <div *ngIf="plant.progressToHarvest != 100">
-              <div class="progress-wrapper col-6 text-center">
+              <div class="progress-wrapper text-center">
                 <div class="center">
                   <mat-progress-bar
                   class="progress-bar-margin"
@@ -145,7 +134,14 @@
                 </mat-progress-bar>
                 </div>
               </div>
-              <p>{{ plant.progressToHarvest }}%</p>
+            </div>
+          </div>
+          <mat-card-content class="print-ignore">
+            <div class="center">
+              {{plant.plant | titlecase}}
+            </div>
+            <div class="center hide-when-sm">
+              x {{plant.perFoot}}
             </div>
           </mat-card-content>
         </mat-card>
@@ -162,17 +158,9 @@
         <!-- display third column -->
         <mat-card *ngIf="plant.col == 3" class="card-container" (click)="openMoreInfo(plant._id)">
           <div class="card-title">
-            <div class="center">
-              {{plant.plant | titlecase}}
-            </div>
-            <div class="center">
-              x {{plant.perFoot}}
-            </div>
-          </div>
-          <mat-card-content class="print-ignore">
             <!-- displays green bar if ready to harvest -->
             <div *ngIf="plant.progressToHarvest == 100">
-              <div class="progress-wrapper col-6 text-center">
+              <div class="progress-wrapper">
                 <div class="center">
                   <mat-progress-bar
                   class="progress-bar-margin"
@@ -181,10 +169,9 @@
                 </mat-progress-bar>
                 </div>
               </div>
-              <p>{{ plant.progressToHarvest }}%</p>
             </div>
             <div *ngIf="plant.progressToHarvest != 100">
-              <div class="progress-wrapper col-6 text-center">
+              <div class="progress-wrapper text-center">
                 <div class="center">
                   <mat-progress-bar
                   class="progress-bar-margin"
@@ -194,7 +181,14 @@
                 </mat-progress-bar>
                 </div>
               </div>
-              <p>{{ plant.progressToHarvest }}%</p>
+            </div>
+          </div>
+          <mat-card-content class="print-ignore">
+            <div class="center">
+              {{plant.plant | titlecase}}
+            </div>
+            <div class="center hide-when-sm">
+              x {{plant.perFoot}}
             </div>
           </mat-card-content>
         </mat-card>
@@ -211,17 +205,9 @@
         <!-- display fourth column -->
         <mat-card *ngIf="plant.col == 4" class="card-container" (click)="openMoreInfo(plant._id)">
           <div class="card-title">
-            <div class="center">
-              {{plant.plant | titlecase}}
-            </div>
-            <div class="center">
-              x {{plant.perFoot}}
-            </div>
-          </div>
-          <mat-card-content class="print-ignore">
             <!-- displays green bar if ready to harvest -->
             <div *ngIf="plant.progressToHarvest == 100">
-              <div class="progress-wrapper col-6 text-center">
+              <div class="progress-wrapper">
                 <div class="center">
                   <mat-progress-bar
                   class="progress-bar-margin"
@@ -230,10 +216,9 @@
                 </mat-progress-bar>
                 </div>
               </div>
-              <p>{{ plant.progressToHarvest }}%</p>
             </div>
             <div *ngIf="plant.progressToHarvest != 100">
-              <div class="progress-wrapper col-6 text-center">
+              <div class="progress-wrapper text-center">
                 <div class="center">
                   <mat-progress-bar
                   class="progress-bar-margin"
@@ -243,7 +228,14 @@
                 </mat-progress-bar>
                 </div>
               </div>
-              <p>{{ plant.progressToHarvest }}%</p>
+            </div>
+          </div> 
+          <mat-card-content class="print-ignore">
+            <div class="center">
+              {{plant.plant | titlecase}}
+            </div>
+            <div class="center hide-when-sm">
+              x {{plant.perFoot}}
             </div>
           </mat-card-content>
         </mat-card>
