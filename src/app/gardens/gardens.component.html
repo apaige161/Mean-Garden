@@ -49,200 +49,210 @@
         <h4>**Still under construction**</h4>
         <h4>**Click or tap on a plant for options and more info**</h4>
         <h4>**(If you have made changes refresh the page and they will appear)**</h4>
-        <button mat-raised-button color="warn" (click)="deleteGarden(Garden)">Delete Garden</button>
+        
       </div>
     </div>
   
-    <!-- col 1 only-->
-    <div ngxPrint *ngIf="Garden" class="saved-garden-column" >
-      <div *ngFor="let plant of plants
-        | filter: Garden :'garden'
-        | sort: ['col'] : ['garden']
-        | sort:[SortByParam, SortDirection]">
-      
-        <!-- display first column -->
-        <mat-card *ngIf="plant.col == 1" class="card-container" (click)="openMoreInfo(plant._id)">
-          <div class="card-title">
-            <!-- displays green bar if ready to harvest -->
-            <div *ngIf="plant.progressToHarvest == 100">
-              <div class="progress-wrapper">
-                <div class="center">
-                  <mat-progress-bar
-                  class="progress-bar-margin"
-                  mode="determinate" 
-                  [value]="plant.progressToHarvest">
-                </mat-progress-bar>
+    <div class="column-container">
+
+      <!-- col 1 only-->
+      <div ngxPrint *ngIf="Garden" class="saved-garden-column" >
+        <div *ngFor="let plant of plants
+          | filter: Garden :'garden'
+          | sort: ['col'] : ['garden']
+          | sort:[SortByParam, SortDirection]">
+        
+          <!-- display first column -->
+          <mat-card *ngIf="plant.col == 1" class="card-container center" (click)="openMoreInfo(plant._id)">
+            <div class="card-title">
+              <!-- displays green bar if ready to harvest -->
+              <div *ngIf="plant.progressToHarvest == 100">
+                <div class="progress-wrapper ">
+                  <div class="center">
+                    <mat-progress-bar
+                    class="progress-bar-margin"
+                    mode="determinate" 
+                    [value]="plant.progressToHarvest">
+                  </mat-progress-bar>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="plant.progressToHarvest != 100">
+                <div class="progress-wrapper text-center ">
+                  <div class="center">
+                    <mat-progress-bar
+                    class="progress-bar-margin"
+                    mode="determinate" 
+                    [color]="color"
+                    [value]="plant.progressToHarvest">
+                  </mat-progress-bar>
+                  </div>
                 </div>
               </div>
             </div>
-            <div *ngIf="plant.progressToHarvest != 100">
-              <div class="progress-wrapper text-center">
-                <div class="center">
-                  <mat-progress-bar
-                  class="progress-bar-margin"
-                  mode="determinate" 
-                  [color]="color"
-                  [value]="plant.progressToHarvest">
-                </mat-progress-bar>
-                </div>
+            <mat-card-content class="print-ignore">
+              <div class="center smaller-text-when-sm .min-height-boxes mt-3">
+                {{plant.plant | titlecase}}
               </div>
-            </div>
-          </div>
-          <mat-card-content class="print-ignore">
-            <div class="center">
-              {{plant.plant | titlecase}}
-            </div>
-            <div class="center hide-when-sm">
-              x {{plant.perFoot}}
-            </div>
-          </mat-card-content>
-        </mat-card>
-  
-      </div>
-    </div>
-  
-    <!-- col 2 only-->
-    <div *ngIf="Garden" class="saved-garden-column">
-      <div *ngFor="let plant of plants
-        | filter: Garden :'garden'
-        | sort: ['col'] : ['garden']
-        | sort:[SortByParam, SortDirection]">
-      
-        <!-- display second column -->
-        <mat-card *ngIf="plant.col == 2" class="card-container" (click)="openMoreInfo(plant._id)">
-          <div class="card-title">
-            <!-- displays green bar if ready to harvest -->
-            <div *ngIf="plant.progressToHarvest == 100">
-              <div class="progress-wrapper">
-                <div class="center">
-                  <mat-progress-bar
-                  class="progress-bar-margin"
-                  mode="determinate" 
-                  [value]="plant.progressToHarvest">
-                </mat-progress-bar>
-                </div>
+              <div class="center hide-when-sm">
+                x {{plant.perFoot}}
               </div>
-            </div>
-            <div *ngIf="plant.progressToHarvest != 100">
-              <div class="progress-wrapper text-center">
-                <div class="center">
-                  <mat-progress-bar
-                  class="progress-bar-margin"
-                  mode="determinate" 
-                  [color]="color"
-                  [value]="plant.progressToHarvest">
-                </mat-progress-bar>
-                </div>
-              </div>
-            </div>
-          </div>
-          <mat-card-content class="print-ignore">
-            <div class="center">
-              {{plant.plant | titlecase}}
-            </div>
-            <div class="center hide-when-sm">
-              x {{plant.perFoot}}
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-  
-    <!-- col 3 only-->
-    <div *ngIf="Garden" class="saved-garden-column" >
-      <div *ngFor="let plant of plants
-        | filter: Garden :'garden'
-        | sort: ['col'] : ['garden']
-        | sort:[SortByParam, SortDirection]">
-      
-        <!-- display third column -->
-        <mat-card *ngIf="plant.col == 3" class="card-container" (click)="openMoreInfo(plant._id)">
-          <div class="card-title">
-            <!-- displays green bar if ready to harvest -->
-            <div *ngIf="plant.progressToHarvest == 100">
-              <div class="progress-wrapper">
-                <div class="center">
-                  <mat-progress-bar
-                  class="progress-bar-margin"
-                  mode="determinate" 
-                  [value]="plant.progressToHarvest">
-                </mat-progress-bar>
-                </div>
-              </div>
-            </div>
-            <div *ngIf="plant.progressToHarvest != 100">
-              <div class="progress-wrapper text-center">
-                <div class="center">
-                  <mat-progress-bar
-                  class="progress-bar-margin"
-                  mode="determinate" 
-                  [color]="color"
-                  [value]="plant.progressToHarvest">
-                </mat-progress-bar>
-                </div>
-              </div>
-            </div>
-          </div>
-          <mat-card-content class="print-ignore">
-            <div class="center">
-              {{plant.plant | titlecase}}
-            </div>
-            <div class="center hide-when-sm">
-              x {{plant.perFoot}}
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-  
-    <!-- col 4 only-->
-    <div *ngIf="Garden" class="saved-garden-column">
-      <div *ngFor="let plant of plants
-        | filter: Garden :'garden'
-        | sort: ['col'] : ['garden']
-        | sort:[SortByParam, SortDirection]">
-      
-        <!-- display fourth column -->
-        <mat-card *ngIf="plant.col == 4" class="card-container" (click)="openMoreInfo(plant._id)">
-          <div class="card-title">
-            <!-- displays green bar if ready to harvest -->
-            <div *ngIf="plant.progressToHarvest == 100">
-              <div class="progress-wrapper">
-                <div class="center">
-                  <mat-progress-bar
-                  class="progress-bar-margin"
-                  mode="determinate" 
-                  [value]="plant.progressToHarvest">
-                </mat-progress-bar>
-                </div>
-              </div>
-            </div>
-            <div *ngIf="plant.progressToHarvest != 100">
-              <div class="progress-wrapper text-center">
-                <div class="center">
-                  <mat-progress-bar
-                  class="progress-bar-margin"
-                  mode="determinate" 
-                  [color]="color"
-                  [value]="plant.progressToHarvest">
-                </mat-progress-bar>
-                </div>
-              </div>
-            </div>
-          </div> 
-          <mat-card-content class="print-ignore">
-            <div class="center">
-              {{plant.plant | titlecase}}
-            </div>
-            <div class="center hide-when-sm">
-              x {{plant.perFoot}}
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
+            </mat-card-content>
+          </mat-card>
     
-  </div><!-- 4 column layout for saved gardens-->
+        </div>
+      </div>
+    
+      <!-- col 2 only-->
+      <div *ngIf="Garden" class="saved-garden-column">
+        <div *ngFor="let plant of plants
+          | filter: Garden :'garden'
+          | sort: ['col'] : ['garden']
+          | sort:[SortByParam, SortDirection]">
+        
+          <!-- display second column -->
+          <mat-card *ngIf="plant.col == 2" class="card-container center" (click)="openMoreInfo(plant._id)">
+            <div class="card-title">
+              <!-- displays green bar if ready to harvest -->
+              <div *ngIf="plant.progressToHarvest == 100">
+                <div class="progress-wrapper ">
+                  <div class="center">
+                    <mat-progress-bar
+                    class="progress-bar-margin"
+                    mode="determinate" 
+                    [value]="plant.progressToHarvest">
+                  </mat-progress-bar>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="plant.progressToHarvest != 100">
+                <div class="progress-wrapper text-center ">
+                  <div class="center">
+                    <mat-progress-bar
+                    class="progress-bar-margin"
+                    mode="determinate" 
+                    [color]="color"
+                    [value]="plant.progressToHarvest">
+                  </mat-progress-bar>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <mat-card-content class="print-ignore">
+              <div class="center smaller-text-when-sm .min-height-boxes mt-3">
+                {{plant.plant | titlecase}}
+              </div>
+              <div class="center hide-when-sm">
+                x {{plant.perFoot}}
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    
+      <!-- col 3 only-->
+      <div *ngIf="Garden" class="saved-garden-column" >
+        <div *ngFor="let plant of plants
+          | filter: Garden :'garden'
+          | sort: ['col'] : ['garden']
+          | sort:[SortByParam, SortDirection]">
+        
+          <!-- display third column -->
+          <mat-card *ngIf="plant.col == 3" class="card-container center" (click)="openMoreInfo(plant._id)">
+            <div class="card-title">
+              <!-- displays green bar if ready to harvest -->
+              <div *ngIf="plant.progressToHarvest == 100">
+                <div class="progress-wrapper ">
+                  <div class="center">
+                    <mat-progress-bar
+                    class="progress-bar-margin"
+                    mode="determinate" 
+                    [value]="plant.progressToHarvest">
+                  </mat-progress-bar>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="plant.progressToHarvest != 100">
+                <div class="progress-wrapper text-center ">
+                  <div class="center">
+                    <mat-progress-bar
+                    class="progress-bar-margin"
+                    mode="determinate" 
+                    [color]="color"
+                    [value]="plant.progressToHarvest">
+                  </mat-progress-bar>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <mat-card-content class="print-ignore">
+              <div class="center smaller-text-when-sm .min-height-boxes mt-3">
+                {{plant.plant | titlecase}}
+              </div>
+              <div class="center hide-when-sm">
+                x {{plant.perFoot}}
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    
+      <!-- col 4 only-->
+      <div *ngIf="Garden" class="saved-garden-column">
+        <div *ngFor="let plant of plants
+          | filter: Garden :'garden'
+          | sort: ['col'] : ['garden']
+          | sort:[SortByParam, SortDirection]">
+        
+          <!-- display fourth column -->
+          <mat-card *ngIf="plant.col == 4" class="card-container center" (click)="openMoreInfo(plant._id)">
+            <div class="card-title">
+              <!-- displays green bar if ready to harvest -->
+              <div *ngIf="plant.progressToHarvest == 100">
+                <div class="progress-wrapper ">
+                  <div class="center">
+                    <mat-progress-bar
+                    class="progress-bar-margin"
+                    mode="determinate" 
+                    [value]="plant.progressToHarvest">
+                  </mat-progress-bar>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="plant.progressToHarvest != 100">
+                <div class="progress-wrapper text-center ">
+                  <div class="center">
+                    <mat-progress-bar
+                    class="progress-bar-margin"
+                    mode="determinate" 
+                    [color]="color"
+                    [value]="plant.progressToHarvest">
+                  </mat-progress-bar>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <mat-card-content class="print-ignore">
+              <div class="center smaller-text-when-sm .min-height-boxes mt-3">
+                {{plant.plant | titlecase}}
+              </div>
+              <div class="center hide-when-sm">
+                x {{plant.perFoot}}
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      
+    </div><!-- 4 column layout for saved gardens-->
+    
+    
+  </div><!-- end of garden container -->
+
+  <div class="col-12 rem-btn">
+    <button *ngIf="Garden" mat-raised-button color="warn" (click)="deleteGarden(Garden)">Delete Garden</button>
+  </div>
+    
 </div>
 
 

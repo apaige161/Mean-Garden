@@ -176,15 +176,9 @@ h3 {
       display: none;
   }
 
-  .smaller-text-when-sm {
-    font-size: xx-small;
-    font-weight: bolder;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  
   
   .min-height-boxes {
-    min-height: 60px;
+    min-height: 50px;
   }
 }

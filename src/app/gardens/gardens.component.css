@@ -5,10 +5,14 @@
     width: 100%;
 }
 
+.row > * {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+
 .center {
-    display: flex; /* or inline-flex */
-    align-items: center;
-    justify-content: center;
+
+    margin: 0 auto;
 }
 
 .card {
@@ -31,29 +35,48 @@
     height: 100%;
 }
 
+.column-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
 .saved-garden-column {
-    
-    width: 24%;
+
+    width: 25%;
     height: 100%;
     align-items: stretch;
     text-align: center;
     justify-content: space-around;
+    margin: 0 auto;
 }
 
 .card-container {
     
     margin-bottom: 10px;
     margin-top: 10px;
+
     box-shadow: 0 0 5px #964B00;
     background-color: #C46200;
     color: white;
     
+    
 }
+
+
 
 .card-header {
     display: flex;
     justify-content: space-between;
 }
+
+mat-progress-bar {
+    min-height: 50px !important;
+    min-width: 100%;
+    transform: rotate(-90deg) !important;
+}
+
 
 
 .progress-bar-margin {
@@ -62,6 +85,10 @@
 
 .progress-wrapper {
     margin: 0 auto;
+}
+
+#print-section {
+    padding: 0 8px;
 }
 
 /* progress bar custom colors */
@@ -98,6 +125,13 @@
 mat-card {
     height: 150px;
     max-width: 150px;
+    padding: 7px;
+}
+
+.rem-btn {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 /*tablet breakpoint*/
@@ -115,4 +149,21 @@ mat-card {
     .hide-when-sm {
         display: none;
     }
+    
+    .smaller-text-when-sm {
+        font-size: xx-small;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .min-height-boxes {
+        min-height: 50px;
+      }
+
+      .card-container {
+        margin-left: 3px;
+        margin-right: 3px;
+      }
 }
