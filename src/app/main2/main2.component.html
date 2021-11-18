@@ -254,13 +254,15 @@
               class="example-list" 
               (cdkDropListDropped)="drop($event)"
             >
-              <div class="example-box" 
+              <div class="example-box min-height-boxes" 
                 *ngFor="let item of firstCol" 
                 cdkDrag
                 popover="Plant {{item.perFoot}} per foot in {{item.season}} col: {{item.col}}"
                 [outsideClick]="true"
               >
-                    {{item.plant}}
+                    <p class="smaller-text-when-sm">
+                      {{item.plant}}
+                    </p> 
               </div>
             </div>
               <div *ngIf="firstCol.length > 0">
@@ -279,16 +281,18 @@
               cdkDropList 
               #colTwo="cdkDropList"
               [cdkDropListData]="secondCol"
-              class="example-list" 
+              class="example-list " 
               (cdkDropListDropped)="drop($event)"
             >
-              <div class="example-box" 
+              <div class="example-box min-height-boxes" 
                 *ngFor="let item of secondCol" 
                 cdkDrag
                 popover="Plant {{item.perFoot}} per foot in {{item.season}} col: {{item.col}}"
                 [outsideClick]="true"
               >
-                    {{item.plant}}
+                <p class="smaller-text-when-sm">
+                  {{item.plant}}
+                </p> 
               </div>
             </div>
               <div *ngIf="secondCol.length > 0">
@@ -310,13 +314,15 @@
               class="example-list" 
               (cdkDropListDropped)="drop($event)"
             >
-              <div class="example-box" 
+              <div class="example-box min-height-boxes" 
                 *ngFor="let item of thirdCol" 
                 cdkDrag
                 popover="Plant {{item.perFoot}} per foot in {{item.season}} col: {{item.col}}"
                 [outsideClick]="true"
               >
-                    {{item.plant}}
+                <p class="smaller-text-when-sm plant-in-col">
+                  {{item.plant}}
+                </p> 
               </div>
             </div>
               <div *ngIf="thirdCol.length > 0">
@@ -338,14 +344,16 @@
               class="example-list" 
               (cdkDropListDropped)="drop($event)"
             >
-              <div class="example-box" 
+              <div class="example-box min-height-boxes" 
                 *ngFor="let item of fourthCol" 
                 cdkDrag
                 popover="Plant {{item.perFoot}} per foot in {{item.season}} col: {{item.col}}"
                 [outsideClick]="true"
               >
-                    {{item.plant}}
-                </div>
+                <p class="smaller-text-when-sm">
+                  {{item.plant}}
+                </p> 
+              </div>
             </div>
               <div *ngIf="fourthCol.length > 0">
                 <button 

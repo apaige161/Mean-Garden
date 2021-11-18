@@ -69,18 +69,20 @@ h3 {
 }
 
 .example-box {
-  padding: 10px 10px;
+  padding: 5%;
   border-bottom: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   box-sizing: border-box;
   cursor: move;
   background: white;
   font-size: 14px;
 }
+
+
 
 .cdk-drag-preview {
   box-sizing: border-box;
@@ -146,6 +148,14 @@ h3 {
   
 }
 
+.plant-in-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 /* shrink when in tbalet or smaller view */
 
 
@@ -164,5 +174,17 @@ h3 {
 @media (max-width: 767px) {
   .hide-when-sm {
       display: none;
+  }
+
+  .smaller-text-when-sm {
+    font-size: xx-small;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .min-height-boxes {
+    min-height: 60px;
   }
 }
