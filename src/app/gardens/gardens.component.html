@@ -65,27 +65,27 @@
           <!-- display first column -->
           <mat-card *ngIf="plant.col == 1" class="card-container center" (click)="openMoreInfo(plant._id)">
             <div class="card-title">
-              <!-- displays green bar if ready to harvest -->
-              <div *ngIf="plant.progressToHarvest == 100">
-                <div class="progress-wrapper ">
+              <div class="progress-wrapper">
+                <!-- displays green bar if ready to harvest -->
+                <div *ngIf="plant.progressToHarvest == 100">
                   <div class="center">
                     <mat-progress-bar
-                    class="progress-bar-margin"
-                    mode="determinate" 
-                    [value]="plant.progressToHarvest">
-                  </mat-progress-bar>
+                      
+                      mode="determinate" 
+                      [value]="plant.progressToHarvest">
+                    </mat-progress-bar>
                   </div>
                 </div>
-              </div>
-              <div *ngIf="plant.progressToHarvest != 100">
-                <div class="progress-wrapper text-center ">
-                  <div class="center">
-                    <mat-progress-bar
-                    class="progress-bar-margin"
-                    mode="determinate" 
-                    [color]="color"
-                    [value]="plant.progressToHarvest">
-                  </mat-progress-bar>
+                <div *ngIf="plant.progressToHarvest != 100">
+                  <div class="progress-wrapper text-center ">
+                    <div class="center">
+                      <mat-progress-bar
+                      
+                      mode="determinate" 
+                      [color]="color"
+                      [value]="plant.progressToHarvest">
+                    </mat-progress-bar>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@
                 <div class="progress-wrapper ">
                   <div class="center">
                     <mat-progress-bar
-                    class="progress-bar-margin"
+                    
                     mode="determinate" 
                     [value]="plant.progressToHarvest">
                   </mat-progress-bar>
@@ -129,7 +129,7 @@
                 <div class="progress-wrapper text-center ">
                   <div class="center">
                     <mat-progress-bar
-                    class="progress-bar-margin"
+                    
                     mode="determinate" 
                     [color]="color"
                     [value]="plant.progressToHarvest">
@@ -165,7 +165,7 @@
                 <div class="progress-wrapper ">
                   <div class="center">
                     <mat-progress-bar
-                    class="progress-bar-margin"
+                    
                     mode="determinate" 
                     [value]="plant.progressToHarvest">
                   </mat-progress-bar>
@@ -176,7 +176,7 @@
                 <div class="progress-wrapper text-center ">
                   <div class="center">
                     <mat-progress-bar
-                    class="progress-bar-margin"
+                    
                     mode="determinate" 
                     [color]="color"
                     [value]="plant.progressToHarvest">
@@ -212,7 +212,7 @@
                 <div class="progress-wrapper ">
                   <div class="center">
                     <mat-progress-bar
-                    class="progress-bar-margin"
+                    
                     mode="determinate" 
                     [value]="plant.progressToHarvest">
                   </mat-progress-bar>
@@ -223,7 +223,7 @@
                 <div class="progress-wrapper text-center ">
                   <div class="center">
                     <mat-progress-bar
-                    class="progress-bar-margin"
+                    
                     mode="determinate" 
                     [color]="color"
                     [value]="plant.progressToHarvest">

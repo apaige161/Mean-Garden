@@ -32,16 +32,6 @@ move code into production branch
 
 
 -UI issues
-create a garden page
--display per foot on hover
-- fix mobile view of plants -- replace with dropdown?
-- fix mobile view of remove column
 
 on gardens page
--increase the size of progress bar 
-    -90%+
-- center the plant name
-
-
---Continue adding the dropdown into main2.component
--html is there but needs some configuration in the .ts file
+- animate the progress bar 

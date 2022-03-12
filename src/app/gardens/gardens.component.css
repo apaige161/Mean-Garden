@@ -72,19 +72,16 @@
 }
 
 mat-progress-bar {
-    min-height: 50px !important;
+    min-height: 4rem !important;
     min-width: 100%;
-    transform: rotate(-90deg) !important;
-}
+    transform: rotate(-180deg) !important;
 
-
-
-.progress-bar-margin {
-    margin: 10px 0;
 }
 
 .progress-wrapper {
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    min-height: 100%;
+    background-color: black;
 }
 
 #print-section {
