@@ -33,5 +33,10 @@ move code into production branch
 
 -UI issues
 
-on gardens page
+**on gardens page
 - animate the progress bar 
+
+Center garden columms when user selects less than 4
+
+
+

@@ -74,14 +74,13 @@
 mat-progress-bar {
     min-height: 4rem !important;
     min-width: 100%;
-    transform: rotate(-180deg) !important;
+    transform: rotate(0deg) !important;
 
 }
 
 .progress-wrapper {
     /*margin: 0 auto;*/
     min-height: 100%;
-    background-color: black;
 }
 
 #print-section {
